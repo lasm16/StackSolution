@@ -5,7 +5,6 @@
         private List<string> _collection;
 
         public int Size => _collection.Count;
-
         public string? Top
         {
             get
@@ -36,10 +35,7 @@
             return item;
         }
 
-        public void Clear()
-        {
-            _collection.Clear();
-        }
+        public void Clear() => _collection.Clear();
 
         public static SimpleStack Concat(params SimpleStack[] args) // Как можно этот метод вынести в интерфейс?
         {
