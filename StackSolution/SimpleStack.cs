@@ -41,13 +41,13 @@
         {
             var stack = new SimpleStack();
             // Как-то можно избежать двойной цикл?
-            foreach (var item in args)
+            foreach (var arg in args)
             {
-                var size = item.Size;
+                var size = arg.Size;
                 for (var i = 0; i < size; i++)
                 {
-                    var deleted = item.Pop();
-                    stack.Add(deleted);
+                    var item = arg.Pop();
+                    stack.Add(item);
                 }
             }
             return stack;
