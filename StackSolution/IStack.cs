@@ -6,7 +6,7 @@
         public string? Top { get; }
 
         public void Add(string item);
-        public string? Pop();
+        public string Pop();
         public void Clear();
     }
 }

@@ -13,7 +13,7 @@
                 {
                     return _collection.Last();
                 }
-                catch (InvalidOperationException)
+                catch (Exception)
                 {
                     return null;
                 }
