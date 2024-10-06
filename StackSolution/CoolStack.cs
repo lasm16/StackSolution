@@ -1,19 +1,11 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace StackSolution
+﻿namespace StackSolution
 {
     public class CoolStack : IStack
     {
-        private StackItem? _stackItem;
         private int _size = 0;
+        private StackItem? _stackItem;
 
         public int Size => _size;
-
         public string? Top
         {
             get
@@ -62,6 +54,12 @@ namespace StackSolution
             return item;
         }
 
+        public void Clear()
+        {
+            _size = 0;
+            _stackItem = null;
+        }
+
         public static CoolStack Concat(params CoolStack[] args) // Как можно этот метод вынести в интерфейс?
         {
             var stack = new CoolStack();
@@ -78,16 +76,9 @@ namespace StackSolution
             return stack;
         }
 
-        public void Clear()
-        {
-            _size = 0;
-            _stackItem = null;
-        }
-
         class StackItem
         {
             public string Current { get; set; }
-
             public StackItem Previous { get; set; }
 
             public StackItem(string element)
