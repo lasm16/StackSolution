@@ -53,15 +53,15 @@
 
             if (stack is SimpleStack)
             {
-                var s = new SimpleStack("a", "b", "c");
-                s.Merge(new SimpleStack("1", "2", "3"));
+                stack = new SimpleStack("a", "b", "c");
+                stack.Merge(new SimpleStack("1", "2", "3"));
             }
             else
             {
-                var s = new CoolStack("a", "b", "c");
-                s.Merge(new CoolStack("1", "2", "3"));
+                stack = new CoolStack("a", "b", "c");
+                stack.Merge(new CoolStack("1", "2", "3"));
             }
-            // в стеке s теперь элементы - "a", "b", "c", "3", "2", "1" <- верхний
+            // в стеке stack теперь элементы - "a", "b", "c", "3", "2", "1" <- верхний
         }
 
         private static void Exercise3(IStack? stack)
@@ -75,7 +75,7 @@
             {
                 stack = CoolStack.Concat(new CoolStack("a", "b", "c"), new CoolStack("1", "2", "3"), new CoolStack("А", "Б", "В"));
             }
-            // в стеке s теперь элементы - "c", "b", "a" "3", "2", "1", "В", "Б", "А" <- верхний}
+            // в стеке stack теперь элементы - "c", "b", "a" "3", "2", "1", "В", "Б", "А" <- верхний}
         }
 
         private static void Exercise4(IStack? stack)
