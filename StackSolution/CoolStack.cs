@@ -41,14 +41,14 @@
                 throw new InvalidOperationException("Стек пустой!");
             }
 
-            var item = _stackItem.Current;
+            var item = _stackItem!.Current;
             if (_size == 1)
             {
                 _stackItem = null;
                 _size--;
                 return item;
             }
-            _stackItem.Current = _stackItem.Previous.Current;
+            _stackItem.Current = _stackItem.Previous!.Current;
             _stackItem.Previous = _stackItem.Previous.Previous;
             _size--;
             return item;
@@ -79,7 +79,7 @@
         class StackItem
         {
             public string Current { get; set; }
-            public StackItem Previous { get; set; }
+            public StackItem? Previous { get; set; }
 
             public StackItem(string element)
             {

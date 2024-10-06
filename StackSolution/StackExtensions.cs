@@ -8,7 +8,7 @@
             for (int i = 0; i < stackSize; i++)
             {
                 var item = stack2.Pop();
-                stack.Add(item);
+                stack.Add(item!);
             }
         }
     }
