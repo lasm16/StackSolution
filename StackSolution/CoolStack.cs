@@ -60,10 +60,9 @@
             _stackItem = null;
         }
 
-        public static CoolStack Concat(params CoolStack[] args) // Как можно этот метод вынести в интерфейс?
+        public static IStack Concat(params IStack[] args)
         {
             var stack = new CoolStack();
-            // Как-то можно избежать двойной цикл?
             foreach (var arg in args)
             {
                 var size = arg.Size;

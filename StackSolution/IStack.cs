@@ -8,5 +8,6 @@
         public void Add(string item);
         public string Pop();
         public void Clear();
+        public static abstract IStack Concat(params IStack[] args);
     }
 }

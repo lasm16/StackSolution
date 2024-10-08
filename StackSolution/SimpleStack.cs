@@ -5,20 +5,7 @@
         private List<string> _collection;
 
         public int Size => _collection.Count;
-        public string? Top
-        {
-            get
-            {
-                try
-                {
-                    return _collection.Last();
-                }
-                catch (Exception)
-                {
-                    return null;
-                }
-            }
-        }
+        public string? Top => _collection.LastOrDefault();
 
         public SimpleStack(params string[] args) => _collection = [.. args];
 
@@ -31,16 +18,15 @@
                 throw new InvalidOperationException("Стек пустой!");
             }
             var item = _collection.Last();
-            _collection.Remove(item);
+            _collection.RemoveAt(Size - 1);
             return item;
         }
 
         public void Clear() => _collection.Clear();
 
-        public static SimpleStack Concat(params SimpleStack[] args) // Как можно этот метод вынести в интерфейс?
+        public static IStack Concat(params IStack[] args)
         {
             var stack = new SimpleStack();
-            // Как-то можно избежать двойной цикл?
             foreach (var arg in args)
             {
                 var size = arg.Size;
